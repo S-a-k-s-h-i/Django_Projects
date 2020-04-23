@@ -1,0 +1,6 @@
+adium-theme-ubuntu==0.3.4
+Django==2.2.11
+pytz==2014.10
+sqlparse==0.1.18
+unity-lens-photos==1.0
+Python==3.5.2
