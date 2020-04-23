@@ -1,0 +1,30 @@
+{% extends 'nav.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'details.css' %}">
+</head>
+<body>
+    <div class="mid">
+     <h1><i class="fa fa-user" aria-hidden="true"></i><br>
+USER PROFILE</h1>
+    <h4>
+USERNAME: {{ user.username }} <br>
+
+USER FULL NAME: {{ user.get_full_name }}<br>
+
+EMAIL: {{ user.email }}<br>
+
+SESSION STARTED AT: {{ user.last_login }}<br>
+        </h4>
+        <button onclick="location.href='{% url 'index' %}' ">Welcome</button>
+    </div>
+    {% endblock %}
+</body>
+</html>
