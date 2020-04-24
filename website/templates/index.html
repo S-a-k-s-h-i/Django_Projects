@@ -13,17 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
    <div data-parallax="scroll" data-image-src="{% static 'images/book.jpg' %}">
        <div class="center">
-        <h1>A Book is a gift that lasts a lifetime.<br>Live life buy the books</h1>
+        <h1>A Book is a gift that lasts a lifetime.<br>Live life buy the books</h1><br>
+            <p><a class="btn btn-default btn-lg animated infinite bounce" href="#">Buy Today</a></p>
         </div>
     </div>
     <div  data-parallax="scroll" >
        <div class="book">
            <h2>Popular Books</h2>
-             <div class="container">
+             <div class="container products ">
                  <div class="row">
                          {% for product in object_list %}
                      <a href="{% url 'product_detail' product.pk %}">
@@ -39,7 +41,10 @@
                           {% endfor %}
                  </div>
              </div>
+            <br>
+           <p><a class="btn btn-primary btn-lg animated infinite swing" href="#">More Books</a></p>
         </div>
+
    </div>
     <div data-parallax="scroll" data-image-src="{% static 'images/lap.jpg' %}">
        <div class="center">

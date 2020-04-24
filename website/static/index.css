@@ -1,3 +1,9 @@
+body{
+    padding-top:0;
+}
+.products{
+  height:500px;
+  }
 
 div{
     height: 700px;
@@ -10,8 +16,8 @@ div{
     margin: 0;
     padding: 0;
     color: white;
-    font-family: 'Anton', sans-serif;
     font-size:35px;
+    font-weight:bold;
     
 }
 p{  color: white;
@@ -23,7 +29,7 @@ p{  color: white;
 .center{
     width:500px;
     margin: 0 auto;
-    padding-top: 250px;
+    padding-top: 220px;
 }
 
 .book h2{
@@ -37,9 +43,11 @@ font-weight:bold;
     height: 250px;
 }
 <--------------------------------Products------------------------------>
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 100px;
+  max-width: 200px;
+  max-height:200px;
   margin: auto;
   text-align: center;
   font-family: arial;
