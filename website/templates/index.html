@@ -23,16 +23,41 @@
         </div>
     </div>
     <div  data-parallax="scroll" >
+         {% if messages %}
+        <div>
+            <hr>
+                {% for k in messages %}
+               <h2 class="messages"><i class="fa fa-info notfound" aria-hidden="true"></i>
+                    Sorry, we couldn't find any results matching<br> " {{k}}"</h2>
+                {% endfor %}
+            <hr>
+        </div>
+        {% else %}
+        {% if match %}
+                <h1>Your book</h1>
+             {% for product in match %}
+                <a href="{% url 'product_detail' product.pk %}">
+                <div class="col-md-2 hh">
+                <div class="card">
+                              <img src="{{product.img.url}}" height="230px" alt="" style="width:100%">
+                              <h3 class="Bookname">{{product.name}}</h3>
+                              <p class="price">Rs{{product.price}}</p>
+                              <p><button>Add to Cart</button></p>
+                           </div>
+                    </div>
+                     </a>
+             {% endfor %}
+        {% else %}
        <div class="book">
            <h2>Popular Books</h2>
              <div class="container products ">
                  <div class="row">
-                         {% for product in object_list %}
+                         {% for product in books %}
                      <a href="{% url 'product_detail' product.pk %}">
                      <div class="col-md-2 hh">
                           <div class="card">
                               <img src="{{product.img.url}}" height="230px" alt="" style="width:100%">
-                              <h3>{{product.name}}</h3>
+                              <h3 class="Bookname">{{product.name}}</h3>
                               <p class="price">Rs{{product.price}}</p>
                               <p><button>Add to Cart</button></p>
                            </div>
@@ -42,10 +67,11 @@
                  </div>
              </div>
             <br>
-           <p><a class="btn btn-primary btn-lg animated infinite swing" href="#">More Books</a></p>
+           <p><a class="btn btn-primary btn-lg animated infinite swing" href='{% url 'all_books'%}'>More Books</a></p>
         </div>
-
+         {% endif %}
    </div>
+    {% endif %}
     <div data-parallax="scroll" data-image-src="{% static 'images/lap.jpg' %}">
        <div class="center">
         <h1 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>

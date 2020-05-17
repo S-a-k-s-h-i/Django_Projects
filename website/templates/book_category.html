@@ -1,0 +1,88 @@
+{% extends 'nav.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>book_category</title>
+    <link rel="stylesheet" href="{% static 'book_category.css'%}">
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+      <div class="row">
+          <div class="col-md-2">
+              <!-- Side navigation -->
+                         <div class="sidenav">
+                           <h3 class="cate"><a href=""><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+Fiction</a></h3>
+                            <a href="#">Action/Adventure</a>
+                            <a href="#">Drama</a>
+                            <a href="#">Romance</a>
+                            <a href="#">HIstorical</a>
+                            <a href="#">Mythology</a><br>
+
+                            <h3 class="cate"><a href=""><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+Non-Fiction</a></h3>
+                            <a href="#">Biography</a>
+                            <a href="#">Essay</a>
+                            <a href="#">Textbooks</a>
+                            <a href="#">Speech</a>
+                        </div>
+          </div>
+          <div class="col-md-10">
+              {% if category_books %}
+                  <div class="book">
+           <h2>{{sub_category | title}}</h2>
+                      <div class="container products ">
+                          <div class="row">
+                             {% for product in category_books %}
+                                 <a href="{% url 'product_detail' product.pk %}">
+                                  <div class="col-md-3 hh">
+                                      <div class="card">
+                                        <img src="{{product.img.url}}" height="230px" alt="" style="width:100%">
+                                        <h3 class="Bookname">{{product.name}}</h3>
+                                        <p class="price">Rs{{product.price}}</p>
+                                       <p><button>Add to Cart</button></p>
+                                      </div>
+                                  </div>
+                                   </a>
+                             {% endfor %}
+                 </div>
+             </div>
+            <br>
+        </div>
+            {% else %}
+
+            <div class="book">
+           <h2>Our Books</h2>
+             <div class="container products ">
+                 <div class="row">
+                         {% for product in books %}
+                     <a href="{% url 'product_detail' product.pk %}">
+                     <div class="col-md-3 hh">
+                          <div class="card">
+                              <img src="{{product.img.url}}" height="230px" alt="" style="width:100%">
+                              <h3 class="Bookname">{{product.name}}</h3>
+                              <p class="price">Rs{{product.price}}</p>
+                              <p><button>Add to Cart</button></p>
+                           </div>
+                     </div>
+                         </a>
+                          {% endfor %}
+                 </div>
+             </div>
+            <br>
+        </div>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
+</html>
