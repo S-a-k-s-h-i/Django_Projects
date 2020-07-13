@@ -14,6 +14,6 @@
 <hr>
 <p><ul>
   <li><a href="https://www.python.org/">Python</a> - A programming language that lets you work quickly and integrate systems more effectively.</li>
-  <li><a href="https://www.djangoproject.org/">Django</a> - A high-level Python Web framework that encourages rapid development and clean, pragmatic design.</li>
+  <li><a href="https://www.djangoproject.com/">Django</a> - A high-level Python Web framework that encourages rapid development and clean, pragmatic design.</li>
 </ul></p>
 <img src="website/index.png">
