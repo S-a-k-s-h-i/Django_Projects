@@ -1,7 +1,12 @@
 # Book Selling Website
 <h1>Introduction</h1>
 <hr>
-<p>This is a book selling website using django.It has registration,login and logout. You can use Django Admin to manage all your books .User can login and can see the full details of the book</p>
+<p>This is a book selling website using django.It has registration,login and logout. You can use Django Admin to manage all your books .User can login and can see the full details of the book.</p>
+<p>It has the search functionality also.You can search for the book you want.</p>
+<p>If book->exist<p>
+<p> &nbsp;  Book will be displayed<p>
+<p>else<p>
+ <p> &nbsp;   OOoops we don't have this book<p>
 <h1>Requirements</h1>
 <hr>
 <p><ul>
